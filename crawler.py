@@ -20,6 +20,38 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 
+PERSONAL_FIELD_HINTS = {
+    "name",
+    "full_name",
+    "real_name",
+    "username",
+    "gender",
+    "sex",
+    "age",
+    "birthday",
+    "birthdate",
+    "phone",
+    "mobile",
+    "email",
+    "id_card",
+    "identity",
+    "address",
+    "姓名",
+    "名字",
+    "用户名",
+    "性别",
+    "年龄",
+    "生日",
+    "出生日期",
+    "电话",
+    "手机",
+    "邮箱",
+    "身份证",
+    "证件",
+    "地址",
+}
+
+
 @dataclass
 class CrawlConfig:
     url: str
@@ -32,11 +64,14 @@ class CrawlConfig:
     retries: int = 2
     backoff: float = 0.5
     respect_robots: bool = True
+    allow_personal_data: bool = False
+    redact_personal_data: bool = False
 
 
 class Crawler:
     def __init__(self, config: CrawlConfig) -> None:
         self.config = config
+        validate_personal_fields(config.fields, config.allow_personal_data)
         self.session = requests.Session()
         self.session.headers.update(
             {
@@ -118,7 +153,10 @@ class Crawler:
             for item in soup.select(self.config.item_selector):
                 row: dict[str, Any] = {}
                 for name, selector in self.config.fields.items():
-                    row[name] = self._extract_value(item, selector, current_url)
+                    value = self._extract_value(item, selector, current_url)
+                    if self.config.redact_personal_data and is_personal_field(name):
+                        value = redact_value(name, value)
+                    row[name] = value
                 if row not in results:
                     results.append(row)
 
@@ -232,6 +270,51 @@ def parse_fields(values: list[str]) -> dict[str, str]:
     return fields
 
 
+def is_personal_field(name: str) -> bool:
+    normalized = name.strip().lower().replace("-", "_").replace(" ", "_")
+    return any(hint in normalized for hint in PERSONAL_FIELD_HINTS)
+
+
+def personal_fields(fields: dict[str, str]) -> list[str]:
+    return [name for name in fields if is_personal_field(name)]
+
+
+def validate_personal_fields(fields: dict[str, str], allow_personal_data: bool) -> None:
+    detected = personal_fields(fields)
+    if detected and not allow_personal_data:
+        names = ", ".join(detected)
+        raise ValueError(
+            "检测到疑似个人信息字段："
+            f"{names}。如你确认已获得授权并符合法律/平台规则，请添加 --allow-personal-data。"
+        )
+
+
+def redact_value(field_name: str, value: Any) -> Any:
+    if not isinstance(value, str) or not value:
+        return value
+    normalized = field_name.strip().lower()
+    if "email" in normalized or "邮箱" in normalized:
+        name, sep, domain = value.partition("@")
+        if not sep:
+            return mask_middle(value)
+        return f"{mask_middle(name)}@{domain}"
+    if any(key in normalized for key in ("phone", "mobile", "电话", "手机")):
+        digits = "".join(char for char in value if char.isdigit())
+        if len(digits) >= 7:
+            return f"{digits[:3]}****{digits[-4:]}"
+    if any(key in normalized for key in ("gender", "sex", "性别")):
+        return value
+    return mask_middle(value)
+
+
+def mask_middle(value: str) -> str:
+    if len(value) <= 1:
+        return "*"
+    if len(value) == 2:
+        return value[0] + "*"
+    return value[0] + "*" * (len(value) - 2) + value[-1]
+
+
 def save_rows(rows: list[dict[str, Any]], output: str, fmt: str) -> None:
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -300,6 +383,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--retries", type=int, default=2, help="临时网络错误/限流的重试次数")
     parser.add_argument("--backoff", type=float, default=0.5, help="重试退避系数")
     parser.add_argument("--ignore-robots", action="store_true", help="不检查 robots.txt（仅在你确认有权限时使用）")
+    parser.add_argument(
+        "--allow-personal-data",
+        action="store_true",
+        help="允许提取姓名、性别等个人信息字段（仅在已获授权且合规时使用）",
+    )
+    parser.add_argument(
+        "--redact-personal-data",
+        action="store_true",
+        help="对识别到的个人信息字段进行脱敏输出，适合测试和样例数据",
+    )
     parser.add_argument("-o", "--output", default="data.json")
     parser.add_argument("--format", choices=("json", "csv"), default="json")
     return parser
@@ -314,6 +407,8 @@ def main() -> int:
             config.retries = max(0, args.retries)
             config.backoff = max(0.0, args.backoff)
             config.respect_robots = not args.ignore_robots
+            config.allow_personal_data = args.allow_personal_data
+            config.redact_personal_data = args.redact_personal_data
             rows = Crawler(config).crawl()
             output = args.output if args.output != "data.json" else default_output
             save_rows(rows, output, args.format)
@@ -337,6 +432,8 @@ def main() -> int:
             retries=max(0, args.retries),
             backoff=max(0.0, args.backoff),
             respect_robots=not args.ignore_robots,
+            allow_personal_data=args.allow_personal_data,
+            redact_personal_data=args.redact_personal_data,
         )
         rows = Crawler(config).crawl()
         save_rows(rows, args.output, args.format)

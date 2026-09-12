@@ -46,6 +46,32 @@ python crawler.py "https://example.com/list" --item ".product" \
   --field title=".product-title" --format csv --output data.csv
 ```
 
+## 个人信息字段
+
+如需在你有授权的页面中提取姓名、性别等个人信息，显式添加 `--allow-personal-data`：
+
+```powershell
+py -3 crawler.py "https://example.com/members" ^
+  --item ".member" ^
+  --field 姓名=".name" ^
+  --field 性别=".gender" ^
+  --allow-personal-data ^
+  --output members.json
+```
+
+程序会识别常见个人信息字段名，例如 `姓名`、`性别`、`phone`、`email`、`address` 等；如果没有 `--allow-personal-data`，会拒绝运行并提示确认授权。测试或演示时可以加 `--redact-personal-data` 输出脱敏结果：
+
+```powershell
+py -3 crawler.py "https://example.com/members" ^
+  --item ".member" ^
+  --field 姓名=".name" ^
+  --field 手机=".mobile" ^
+  --allow-personal-data ^
+  --redact-personal-data
+```
+
+请只采集你有权处理的数据，避免抓取身份证号、住址、联系方式等非必要字段，并遵守目标网站规则和适用法律。
+
 ## 百度搜索模式
 
 按关键词抓取百度普通搜索结果：
