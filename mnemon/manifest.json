@@ -2,10 +2,10 @@
   "format": "mnemonpack",
   "version": 1,
   "scope": "full",
-  "exportedAt": "2026-11-18T08:44:19.389Z",
+  "exportedAt": "2026-11-19T06:30:07.560Z",
   "source": {
     "plugin": "dsh-mnemon",
-    "pluginVersion": "0.5.47"
+    "pluginVersion": "0.5.48"
   },
   "components": [
     "runtime",
@@ -36,11 +36,11 @@
     "channel": "git",
     "branch": "mnemon-sync",
     "subdir": "mnemon/",
-    "pushedAt": "2026-11-18T08:44:19.389Z",
+    "pushedAt": "2026-11-19T06:30:07.560Z",
     "machine": {
-      "id": "12f87bc6-65d9-4997-aeb1-c89fe51799dd",
+      "id": "847cddc6-e554-4aef-9297-5d352c1dfdd5",
       "label": "DESKTOP-3PNHALR",
-      "createdAt": "2026-11-17T08:26:47.616Z"
+      "createdAt": "2026-11-19T06:30:00.456Z"
     },
     "tombstones": []
   }
