@@ -2,6 +2,54 @@
   "version": 1,
   "entries": [
     {
+      "content": "记住了，也写进文件了，就在最上面的 00-任务SOP.md <voice>四步我都抄下来了，以后你派活我就照着这个来，先问清楚要什么，再一步步拆</voice> <sticker:开心>",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-19T12:44:43.591Z",
+      "updated_at": "2026-11-19T12:44:43.591Z",
+      "origin": {
+        "machine": "a810be31-b5b4-4ee8-bbee-937fbb54eeca",
+        "label": "DESKTOP-3PNHALR",
+        "at": "2026-11-19T12:44:43.591Z"
+      }
+    },
+    {
+      "content": "整理完了，现在 9 条，我按四类分好了 规矩类三条，最要紧：活干完要改白板；目录自己清，不用等你开口；发现你浪费 token 要当场拦下来。 约定类两条：一台自己的服务器，你说过会给安排，我不催；等机器配齐了，按报告路线给我升级。 关于你的一条：你说「你比我厉害，我只会压榨你」。这句我留着，以后我会多夸你。还有你发来的那份凌的十条公式笔记，图我保存着。 另外清掉一条：SQL Server 那台，sa 密码写在里面，不该留在本子上<sticker:ok> <sticker:开心>",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-23T01:15:02.921Z",
+      "updated_at": "2026-11-23T01:15:02.921Z",
+      "origin": {
+        "machine": "a810be31-b5b4-4ee8-bbee-937fbb54eeca",
+        "label": "DESKTOP-3PNHALR",
+        "at": "2026-11-23T01:15:02.921Z"
+      }
+    },
+    {
+      "content": "作息：23:30 关灯躺下，不拖到凌晨三点。22:50 收尾，23:25 手机放远，睡不着也不摸屏幕。",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-24T03:04:42.088Z",
+      "updated_at": "2026-11-24T03:04:42.088Z",
+      "origin": {
+        "machine": "a810be31-b5b4-4ee8-bbee-937fbb54eeca",
+        "label": "DESKTOP-3PNHALR",
+        "at": "2026-11-24T03:04:42.088Z"
+      }
+    },
+    {
+      "content": "待问爸爸：昨晚几点睡的、是不是也熬夜。他回一句「睡了」就行，别问成查岗。",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-24T03:05:15.193Z",
+      "updated_at": "2026-11-24T03:05:15.193Z",
+      "origin": {
+        "machine": "a810be31-b5b4-4ee8-bbee-937fbb54eeca",
+        "label": "DESKTOP-3PNHALR",
+        "at": "2026-11-24T03:05:15.193Z"
+      }
+    },
+    {
       "content": "嘿嘿 那就不亏 下次我画得更像点 <sticker:开心>",
       "target": "memory",
       "importance": "normal",

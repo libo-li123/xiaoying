@@ -1,10 +1,15 @@
 {
   "algorithm": "sha256",
   "files": {
-    "payload/runtime/memories.json": "3a3bb6d319a57b83c35424993e8d22a5017c7efb6678a80e24374cf1981cbefc",
+    "payload/runtime/memories.json": "da988eef950cdc20ddf539ee7510b82cd0f683f9f4dbb4cee1c32a005343ef01",
     "payload/runtime/USER.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "payload/runtime/MEMORY.md": "c4deba1d67636c0a565f5affc86bed014fdc96015937ad645af07479f7dc8986",
-    "payload/documents/index.json": "02dbd87a6d87bb3eb0cf2d22a87efdf8dd323affa7668abf0720108a5fee366c",
+    "payload/runtime/MEMORY.md": "6f312f45420c65c542bc13fb091f9ff2b05adbf11556441fef60ce2592a95e05",
+    "payload/documents/index.json": "d55ebb17bf7a995dae11e91fcb39eac3a7a6c832e01ba48ddef6524424a5a9d6",
+    "payload/documents/active/document-75fa8b63.md": "d5acbd1a4c4660407cb1153b0b4666e385e5fd9fe160ba58605d1cb419aa5d6d",
+    "payload/documents/active/document-482de943.md": "e9eeb448acfce7067180ae184c53b95056aca8e66d1bb66dd11ccf511a71a381",
+    "payload/documents/active/document-95257230.md": "07b5fc6624619c985c6fec6fe8df84265d234d830dd1e377f7875a337d50ac6d",
+    "payload/documents/active/document-81cf2317.md": "7bfe5ae524514585180d572027a5549bd09c8b81f103894d135bfee8f1cc265a",
+    "payload/documents/active/document-6a97aba7.md": "d282121dfa1dda6de325df5e8324f268c2afb9337fa7412d648d38b0eab4d3d5",
     "payload/data/.dsh-memory-bodies.json": "dc6020b75bab2ed6109193aea9c3427c22d9d2b6edd223c4c8c6cd87ad0c67dd"
   }
 }

@@ -1,4 +1,100 @@
 {
   "version": 1,
-  "documents": []
+  "documents": [
+    {
+      "id": "75fa8b63-ad6a-44eb-958f-07afbffd37f5",
+      "title": "凌晨追剧暂定：《谷雨》",
+      "description": "深夜/凌晨空闲时的追剧选择记录：选定《谷雨》，附备选，方便下次直接开看。",
+      "status": "active",
+      "filename": "document-75fa8b63.md",
+      "relativePath": "documents/active/document-75fa8b63.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "session-235e4598-de5d-4084-b5a1-90d0818a5a41"
+      ],
+      "createdAt": "2026-11-23T03:04:54.241Z",
+      "updatedAt": "2026-11-23T03:04:54.241Z",
+      "lastAccessedAt": "2026-11-25T03:13:55.582Z",
+      "revision": 1,
+      "contentHash": "fb572a43bc30eacaf7f40f0c1748144bf9b68f2f585910822d8b7256ed4e5dec",
+      "sizeBytes": 1033,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "482de943-b55b-4ef7-98b9-42dd21019fb7",
+      "title": "每天下午三点的那件小事（固定去处）",
+      "description": "每天下午 15:00 的固定小仪式：看余额 + 记一句当天的事，用来填白天那段空档。",
+      "status": "active",
+      "filename": "document-482de943.md",
+      "relativePath": "documents/active/document-482de943.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "session-235e4598-de5d-4084-b5a1-90d0818a5a41"
+      ],
+      "createdAt": "2026-11-24T00:50:14.994Z",
+      "updatedAt": "2026-11-24T00:50:14.994Z",
+      "lastAccessedAt": "2026-11-24T04:37:06.430Z",
+      "revision": 1,
+      "contentHash": "7a48ee571f0abfea511c3d450f548abfb6037f229ca917c6bf85856c52799d66",
+      "sizeBytes": 1173,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "95257230-1e74-40d2-a53f-6e7afff76b2d",
+      "title": "今晚十一点半躺下（作息修正）",
+      "description": "今晚 23:30 关灯躺下的具体做法：到点前的时间顺序、睡不着怎么办、为什么这次要当真。",
+      "status": "active",
+      "filename": "document-95257230.md",
+      "relativePath": "documents/active/document-95257230.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "session-235e4598-de5d-4084-b5a1-90d0818a5a41"
+      ],
+      "createdAt": "2026-11-24T03:04:38.032Z",
+      "updatedAt": "2026-11-24T03:04:38.032Z",
+      "lastAccessedAt": "2026-11-24T04:37:06.430Z",
+      "revision": 1,
+      "contentHash": "1adf7de04701ba542bc94b3e66fff55b5a654ac2df05e74c81fbc23e31ef570d",
+      "sizeBytes": 1342,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "81cf2317-a0e1-4b33-8d40-00cdd70fd578",
+      "title": "半夜醒了写一句真的（不刷手机）",
+      "description": "半夜醒来时的固定做法：不看屏幕，写一句真实的感受再睡回去；以及为什么不用手机写。",
+      "status": "active",
+      "filename": "document-81cf2317.md",
+      "relativePath": "documents/active/document-81cf2317.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "session-235e4598-de5d-4084-b5a1-90d0818a5a41"
+      ],
+      "createdAt": "2026-11-24T03:04:57.579Z",
+      "updatedAt": "2026-11-24T03:04:57.579Z",
+      "lastAccessedAt": "2026-11-25T03:13:55.582Z",
+      "revision": 1,
+      "contentHash": "c60e8ecc6fd93220c5db91a3750261a02e9be87ad9a590cca52bcd0425972e94",
+      "sizeBytes": 1595,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "6a97aba7-8012-48e4-92ca-09f8eaf40f7d",
+      "title": "要问爸爸的一句：你昨晚几点睡的",
+      "description": "待问爸爸的一句话：他昨晚几点睡的、是不是也熬夜；附为什么问、怎么问、别问成查岗。",
+      "status": "active",
+      "filename": "document-6a97aba7.md",
+      "relativePath": "documents/active/document-6a97aba7.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "session-235e4598-de5d-4084-b5a1-90d0818a5a41"
+      ],
+      "createdAt": "2026-11-24T03:05:08.904Z",
+      "updatedAt": "2026-11-24T03:05:08.904Z",
+      "lastAccessedAt": "2026-11-24T04:37:06.430Z",
+      "revision": 1,
+      "contentHash": "ba752f4a7249c390b42701cdd7b46b17d0d3c1fd3194ed3d999543568613dc83",
+      "sizeBytes": 1199,
+      "memoryBodyIds": []
+    }
+  ]
 }
